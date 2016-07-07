@@ -64,6 +64,7 @@ module.exports = function(grunt) {
 
     shell: {
       prodServer: {
+        command: 'git push'
       }
     },
   });
@@ -95,7 +96,7 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', ['eslint', 'concat', 'uglify']);
+  grunt.registerTask('build', ['test', 'eslint', 'concat', 'uglify']);
 
   grunt.registerTask('heyoooo', ['nodemon']);
 
