@@ -13,10 +13,12 @@ var Link = require('../app/models/link');
 
 var User = require('../app/models/user');
 var Link = require('../app/models/link');
-('', function() {
-
+// console.log('16');
+describe('', function() {
+  // console.log('18');
   beforeEach(function(done) {
     // Log out currently signed in user
+    // console.log('20');
     request(app)
       .get('/logout')
       .end(function(err, res) {
