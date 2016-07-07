@@ -1,3 +1,4 @@
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -61,6 +62,11 @@ module.exports = function(grunt) {
         tasks: ['cssmin']
       }
     },
+    concurrent: {
+      target: {
+        tasks: ['nodemon', 'watch'],
+      }
+    },
 
     shell: {
       prodServer: {
@@ -69,6 +75,7 @@ module.exports = function(grunt) {
     },
   });
 
+  grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -98,7 +105,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['test', 'eslint', 'concat', 'uglify']);
 
-  grunt.registerTask('heyoo', ['shell']);
+  grunt.registerTask('heyoo', ['concurrent']);
 
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
