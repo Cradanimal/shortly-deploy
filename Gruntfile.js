@@ -98,11 +98,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['test', 'eslint', 'concat', 'uglify']);
 
-  grunt.registerTask('heyoooo', ['nodemon']);
+  grunt.registerTask('heyoo', ['shell']);
 
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
-      // add your production server task here
+      
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
